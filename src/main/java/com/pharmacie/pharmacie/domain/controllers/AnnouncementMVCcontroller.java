@@ -24,16 +24,16 @@ public class AnnouncementMVCcontroller {
         this.aService = aService;
     }
     
-    @RequestMapping("/announcement/list")    
+    @GetMapping("/announcement/list")    
     public String Announcementlist(Model m){    
         List<announcement> list= aService.getAnnouncementAll();
         m.addAttribute("list",list);  
-        return "Announcement/list";    
+        return "backend/Announcement/list";    
     }   
     
     @GetMapping("/announcement/add")
     public String showSignUpForm(announcement ann) {
-        return "Announcement/add";
+        return "backend/Announcement/add";
     }
     
     @PostMapping("/announcement/add")
@@ -63,7 +63,7 @@ public class AnnouncementMVCcontroller {
         		throw new IllegalArgumentException("Invalid user Id:" + id);
          }
         model.addAttribute("ann", ann);
-        return "Announcement/edit";
+        return "backend/Announcement/edit";
     }
     
     @PostMapping("/announcement/update/{id}")
