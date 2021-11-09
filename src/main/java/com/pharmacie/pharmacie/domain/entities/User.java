@@ -30,7 +30,6 @@ public class User  {
 		super();
 		this.username = username;
 		this.password = password;
-	
 	}
 
 	public Integer getUserId() {
